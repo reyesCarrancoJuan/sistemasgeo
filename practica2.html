@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Navigator Object</title>
+    <style>
+        .parrafos {
+            font-size: 5em;
+        }
+        #button {
+            background-color: aqua;
+            color:brown;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Navigator Example</h1>
+    <button id="button" onclick="getData">Obtains data from the Navigator</button>
+    <p class="parrafos">This is a paragraph.</p>
+    <ul id="navigator">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        var navigator = document.getElementById("navigator");
+        var data = getElementByTagName("li");
+
+        function getData() {
+            data[0].innerHTML = "Navigator name:" +navigator.appCodeName;
+            data[1].innerHTML = "Navigator version:" +navigator.appVersion;
+            data[2].innerHTML = "Navigator status:" +navigator.onLine;
+            data[3].innerHTML = "Navigator name:" +navigator.platform;
+            console.log("Internet status:" + navigator.onLine);
+        }
+    
+    </script>
+</body>
+</html>
