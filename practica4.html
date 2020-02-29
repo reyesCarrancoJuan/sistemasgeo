@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Google API</title>
+</head>
+<body>
+    <button onclickl="getLocation()">Get Location</button>
+    <div id="map" style="background-color: #ccc; width: 800px; height:400px"></div>
+<script>
+    function getLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else{
+            alert("No");
+        }
+
+        function showPosition(position){
+            var coordinates = position.coords.latitude + "," + position.coords.longitude;
+            console.log(coordinates);
+
+            var imageurl = "https://maps.googleapis.com/maps/api/staticmap?center="+coordinates+"&zoom=13&size=600x300&maptype=roadmap &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA";
+            document.getElementById("map").innerHTML = "<img src=" + imageurl+">";
+        }
+    }
+</script>
+
+</body>
+</html>
