@@ -17,11 +17,11 @@ function muestraRegistros(doc){
 
     let borrar = document.createElement("button");
     borrar.className = "btn btn-danger m-3";
-    borrar.textContent = "Borrar  ";
+    borrar.textContent = "Delete  ";
 
     let editar = document.createElement("button");
     editar.className = "btn btn-success m-3";
-    editar.textContent = "Editar  ";
+    editar.textContent = "Edit  ";
     editar.setAttribute("data-toggle", "modal");
     editar.setAttribute("data-target", "#ventanaeditar");
 
